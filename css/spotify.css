@@ -1,0 +1,113 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+h2 { margin-bottom: 10px; }
+p { margin-bottom: 15px; }
+
+.input-field {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #333;
+    background-color: #222;
+    color: white;
+    border-radius: 5px;
+}
+
+.fetch-button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #1DB954, #088d40);
+    color: white;
+    border: none;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.fetch-button:hover {
+    background: linear-gradient(135deg, #088d40, #1DB954);
+    transform: translateY(-3px);
+}
+
+.fetch-button:active {
+    transform: translateY(1px);
+}
+
+/* Loading Bar */
+.loading-bar {
+    width: 0%;
+    height: 5px;
+    background-color: #1DB954;
+    margin-top: 10px;
+    display: none;
+    transition: width 2s ease-in-out;
+}
+
+/* Result Section */
+.result-section {
+    margin-top: 20px;
+}
+
+.song-details {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.song-details img {
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+}
+
+.download-buttons a {
+    display: block;
+    padding: 12px;
+    background: linear-gradient(135deg, #1DB954, #088d40);
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 10px;
+    margin-top: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+}
+
+.download-buttons a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #088d40, #1DB954);
+}
+
+.download-buttons a:active {
+    transform: translateY(1px);
+}
+
+/* Message Section */
+.message {
+    margin-top: 15px;
+    font-weight: bold;
+    color: red;
+}
