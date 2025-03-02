@@ -1,0 +1,40 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Downloader</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/fb.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Facebook Downloader</h1>
+        <p>Download Facebook videos effortlessly in HD or SD quality.</p>
+        <div class="input-container">
+            <input type="text" id="videoUrl" placeholder="Paste Facebook Video URL here">
+            <button id="downloadButton">Fetch</button>
+        </div>
+
+        <!-- Loading Spinner -->
+        <div id="loadingSpinner" class="spinner" style="display: none;"></div>
+
+        <!-- Video Details -->
+        <div id="videoDetails" class="video-details" style="display: none;">
+            <img id="thumbnail" alt="Video Thumbnail">
+            <h3 id="videoTitle">Facebook Video</h3>
+            <div class="download-buttons">
+                <a id="downloadHD" class="button" target="_blank">Download HD</a>
+                <a id="downloadSD" class="button" target="_blank">Download SD</a>
+            </div>
+        </div>
+
+        <!-- Error Message -->
+        <div id="errorMessage" class="error-message"></div>
+    </div>
+
+    <footer>
+        <p>© 2025 - David Cyril</p>
+    </footer>
+
+    <script src="/assets/fb.js"></script>
+
+</body></html>
