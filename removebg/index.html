@@ -1,0 +1,160 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Remover| Powered by David Cyril</title>
+    <link rel="stylesheet" href="https://david-cyril.net.ng/css/remini.css">
+    <style>
+        /* Spinning Loader */
+        .loader {
+            display: none;
+            margin: 20px auto;
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-left-color: blue;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Image Background Remover</h1>
+        <p>Upload an image and let me remove the background easily!</p>
+
+        <!-- Upload Section -->
+        <div class="upload-area">
+            <input type="file" id="fileInput" accept="image/*" hidden="">
+            <div class="upload-box" onclick="document.getElementById('fileInput').click()">
+                <span>📷 Click or Drag an Image Here</span>
+            </div>
+        </div>
+
+        <!-- Image Preview Section -->
+        <div id="preview-container" class="hidden">
+            <h2>Preview</h2>
+            <img id="imagePreview" src="" alt="Image Preview">
+            <button id="enhanceBtn" class="btn-red hidden">Remove Background</button>
+        </div>
+
+        <!-- Loader -->
+        <div class="loader" id="loader"></div>
+
+        <!-- Enhanced Image Section -->
+        <div id="result-container" class="hidden">
+            <h2>Success ✅</h2>
+            <img id="enhancedImage" src="" alt="Result">
+            <a id="downloadBtn" class="btn-blue hidden" download="enhanced_image.jpg">Download</a>
+        </div>
+
+        <p class="powered">ᴍᴀᴅᴇ ʙʏ ᴅᴀᴠɪᴅ ᴄʏʀɪʟ</p>
+    </div>
+
+    <script>
+        document.getElementById('fileInput').addEventListener('change', handleFile);
+        document.getElementById('enhanceBtn').addEventListener('click', enhanceImage);
+
+        let selectedFile = null;
+
+        function handleFile(event) {
+            const file = event.target.files[0];
+            if (file) {
+                selectedFile = file;
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    document.getElementById('imagePreview').src = e.target.result;
+                    document.getElementById('preview-container').classList.remove('hidden');
+                    document.getElementById('enhanceBtn').classList.remove('hidden');
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        async function uploadToImgBB(file) {
+            const formData = new FormData();
+            formData.append('image', file);
+            const apiKey = '1fe5c36a643f15d1e5478c716f876a4c'; // Replace with your ImgBB API key
+
+            try {
+                const response = await fetch(`https://api.imgbb.com/1/upload?key=${apiKey}`, {
+                    method: 'POST',
+                    body: formData,
+                });
+
+                const data = await response.json();
+
+                if (!response.ok || !data.data || !data.data.url) {
+                    throw new Error('Failed to upload to ImgBB');
+                }
+
+                return data.data.url;
+            } catch (error) {
+                console.error('ImgBB upload error:', error);
+                throw new Error('ImgBB upload failed');
+            }
+        }
+
+        async function enhanceImageUsingAPI(imgUrl) {
+            const reminiApiUrl = `https://apis.davidcyriltech.my.id/removebg?url=${encodeURIComponent(imgUrl)}`;
+
+            try {
+                const response = await fetch(reminiApiUrl);
+
+                if (!response.ok) {
+                    throw new Error('Failed to enhance the image.');
+                }
+
+                const blob = await response.blob();
+                return blob;  // Return the actual blob
+            } catch (error) {
+                console.error('Error removing image background:', error.message);
+                throw new Error('Failed removing image background');
+            }
+        }
+
+        async function enhanceImage() {
+            if (!selectedFile) {
+                alert("Please upload an image first!");
+                return;
+            }
+
+            document.getElementById('loader').style.display = "block";
+            document.getElementById('enhanceBtn').innerText = "Processing...";
+            document.getElementById('enhanceBtn').disabled = true;
+
+            try {
+                const uploadedUrl = await uploadToImgBB(selectedFile);
+                const enhancedImageBlob = await enhanceImageUsingAPI(uploadedUrl);
+
+                // Create a Blob URL for the enhanced image
+                const blobUrl = URL.createObjectURL(enhancedImageBlob);
+
+                // Display the enhanced image
+                document.getElementById('enhancedImage').src = blobUrl;
+
+                // Set up the download button
+                const downloadBtn = document.getElementById('downloadBtn');
+                downloadBtn.href = blobUrl;
+                downloadBtn.download = "removebg.jpg";
+                downloadBtn.classList.remove('hidden');
+
+                document.getElementById('result-container').classList.remove('hidden');
+                document.getElementById('preview-container').classList.add('hidden');
+
+            } catch (error) {
+                alert("Error removing image background, please try again.");
+                console.error(error);
+            } finally {
+                document.getElementById('loader').style.display = "none";
+                document.getElementById('enhanceBtn').innerText = "Enhance Image";
+                document.getElementById('enhanceBtn').disabled = false;
+            }
+        }
+    </script>
+
+</body></html>
