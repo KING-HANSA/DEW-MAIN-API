@@ -1,0 +1,37 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TikTok Downloader</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/dcx.css">
+</head>
+<body>
+    <div class="container">
+        <h2>TikTok Downloader</h2>
+        <p>Download TikTok videos and audio effortlessly!</p>
+        <input type="text" id="videoUrl" class="input-field" placeholder="Paste TikTok video URL here">
+        <button id="fetchButton" class="fetch-button">Download</button>
+
+        <!-- Result Section -->
+        <div id="resultSection" class="result-section" style="display: none;">
+            <h3>Video Details</h3>
+            <div class="video-details">
+                <img id="avatar" src="" alt="Author Avatar">
+                <div>
+                    <p id="nickname"></p>
+                    <p id="desc"></p>
+                </div>
+            </div>
+            <div class="download-buttons">
+                <a href="#" id="downloadVideoButton" target="_blank">Download Video</a>
+                <a href="#" id="downloadAudioButton" target="_blank">Download Audio</a>
+            </div>
+        </div>
+
+        <!-- Message Section -->
+        <div id="message" class="message"></div>
+    </div>
+
+    <script src="/assets/tiktok.js"></script>
+
+</body></html>
