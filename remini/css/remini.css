@@ -1,0 +1,84 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #1d1e22, #2c3e50);
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 500px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2);
+}
+
+.upload-area {
+    margin: 20px 0;
+}
+
+.upload-box {
+    border: 2px dashed #ddd;
+    padding: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.upload-box:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+#preview-container, #result-container {
+    margin-top: 20px;
+}
+
+img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+/* Button Styles */
+.btn-red, .btn-blue {
+    display: inline-block;
+    padding: 12px 24px;
+    margin-top: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-red {
+    background: #e74c3c;
+    color: white;
+}
+
+.btn-red:hover {
+    background: #c0392b;
+}
+
+.btn-blue {
+    background: #3498db;
+    color: white;
+}
+
+.btn-blue:hover {
+    background: #2980b9;
+}
+
+/* Hide Elements Initially */
+.hidden {
+    display: none;
+}
+
+.powered {
+    margin-top: 30px;
+    font-size: 12px;
+    opacity: 0.7;
+}
