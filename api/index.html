@@ -1,0 +1,397 @@
+
+<html lang="id"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David Cyril | Projects</title>
+    <meta name="description" content="Its Still Under Construction Tho.">
+    <link rel="canonical" href="index.html">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https:/fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+        }
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #0a1128;
+        }
+        .overlay-content {
+            position: relative;
+            z-index: 1;
+        }
+        .bg-gradient-custom {
+            background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%);
+        }
+        .feature-icon {
+            font-size: 2.5rem;
+            color: #1a237e;
+            transition: all 0.3s ease;
+        }
+        .card:hover .feature-icon {
+            transform: scale(1.1);
+            color: #0d47a1;
+        }
+        .btn-primary {
+            background-color: #1a237e;
+            border-color: #1a237e;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #0d47a1;
+            border-color: #0d47a1;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 600;
+        }
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+        @media (min-width: 768px) {
+            .hero-title {
+                font-size: 3.5rem;
+            }
+        }
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+        .card {
+            border: none;
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        /* Navbar styles */
+        .navbar {
+            transition: all 0.3s ease;
+        }
+        .navbar-nav .nav-link {
+            position: relative;
+            padding: 0.5rem 1rem;
+        }
+        .navbar-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: #1a237e;
+            transition: all 0.3s ease;
+        }
+        .navbar-nav .nav-link:hover::after,
+        .navbar-nav .nav-link.active::after {
+            width: 100%;
+            left: 0;
+        }
+        @media (max-width: 991.98px) {
+            .offcanvas {
+                background-color: #f8f9fa;
+            }
+            .navbar-nav .nav-link::after {
+                display: none;
+            }
+            .navbar-nav .nav-link.active {
+                background-color: #e9ecef;
+            }
+        }
+        /* Network theme styles */
+        .network-bg {
+            background-color: #f8f9fa;
+            background-image: 
+                radial-gradient(circle at 25px 25px, #333 2%, transparent 0%),
+                radial-gradient(circle at 75px 75px, #333 2%, transparent 0%);
+            background-size: 100px 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        .network-bg::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            right: -50%;
+            bottom: -50%;
+            background: 
+                linear-gradient(to right, rgba(255,255,255,0.3) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255,255,255,0.3) 1px, transparent 1px);
+            background-size: 20px 20px;
+            transform: rotate(45deg);
+            z-index: 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="index.html#">
+                    <i class="bi bi-shield-check text-primary me-2"></i>
+                    <span>David Cyril Tech</span>
+                </a>
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvas" aria-controls="navbarOffcanvas" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="navbarOffcanvas" aria-labelledby="navbarOffcanvasLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="navbarOffcanvasLabel">Menu</h5>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item"><a class="nav-link" href="./api/aio">All Video Downloader</a></li>
+                            <li class="nav-item"><a class="nav-link" href="./api/image-generator">Ai Image Generator</a></li>
+                            <li class="nav-item"><a class="nav-link" href="./api/chatbot">ChatBot</a></li>
+                            <li class="nav-item"><a class="nav-link" href="./api/tiktok">TikTok Video Downloader</a></li>
+                            <li class="nav-item"><a class="nav-link" href="./api/facebook">Facebook Downloader</a></li>
+                            <li class="nav-item"><a class="nav-link" href="./api/remini">Photo Enhancer</a></li>
+                            <li class="nav-item"><a class="nav-link" href="./api/spotify">Spotify Downloader</a></li>
+                            <li class="nav-item"><a class="nav-link" href="./api/youtube">Youtube Downloader</a></li>
+                            <li class="nav-item"><a class="nav-link" href="./api/removebg">Image Background Remover</a></li>
+                                </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="beranda" class="py-5 text-center text-white position-relative overflow-hidden" style="margin-top: 56px;">
+            <div id="particles-js"><canvas class="particles-js-canvas-el" width="590" height="1236" style="width: 100%; height: 100%;"></canvas></div>
+            <div class="container py-5 overlay-content">
+                <h1 class="hero-title mb-4">Hello!, WELCOME To DAVID CYRIL PROJECT LIBRARY</h1>
+                <p class="lead mb-4">Here You Will Find A List Of My Web Projects, Have Fun ^_^</p>
+                <a href="https://files.catbox.moe/dwwyob.jpg" class="btn btn-light btn-lg rounded-pill px-4 shadow-sm">Donate</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <h3 class="h5">Powered By David Cyril Tech</h3>
+                    <p class="mb-0">All Rights Reserved ©</p>
+                </div>
+
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <small>© 2024 - 2099 David Cyril.</small>
+            </div>
+        
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#ffffff"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 6,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "repulse"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 400,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+
+        // Navbar active state
+        const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+        const sections = document.querySelectorAll('section');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 60) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Close navbar on link click (mobile)
+        const navbarToggler = document.querySelector('.navbar-toggler');
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth < 992) {
+                    navbarToggler.click();
+                }
+            });
+        });
+    </script>
+	<script>
+// Website checker functionality
+        const checkForm = document.getElementById('checkForm');
+        const domainInput = document.getElementById('domainInput');
+        const checkButton = document.getElementById('checkButton');
+        const result = document.getElementById('result');
+        const resultMessage = document.getElementById('resultMessage');
+        const error = document.getElementById('error');
+        const errorMessage = document.getElementById('errorMessage');
+        const dnsResponse = document.getElementById('dnsResponse');
+        const dnsResponseJson = document.getElementById('dnsResponseJson');
+
+        checkForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const domain = domainInput.value.trim();
+
+            if (!domain) return;
+
+            checkButton.disabled = true;
+            checkButton.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Memeriksa...';
+            result.classList.add('d-none');
+            error.classList.add('d-none');
+            dnsResponse.classList.add('d-none');
+
+            try {
+                const response = await axios.get(`https://dns.caliphdev.com/dns-query?name=${domain}`);
+                const data = response.data;
+
+                // Menampilkan respons DNS lengkap
+                dnsResponse.classList.remove('d-none');
+                dnsResponseJson.textContent = JSON.stringify(data, null, 2);
+
+                if (data.Status === 0 && data.Answer && data.Answer.length > 0) {
+                    const isBlocked = data.Answer.some(answer => answer.data === 'dns.caliphdev.com.');
+                    result.classList.remove('d-none');
+                    result.querySelector('.alert').className = `alert ${isBlocked ? 'alert-danger' : 'alert-success'}`;
+                    result.querySelector('.bi').className = `bi ${isBlocked ? 'bi-shield-fill-x' : 'bi-shield-fill-check'} me-2`;
+                    resultMessage.textContent = isBlocked
+                        ? `${domain} diblokir oleh Caliph DNS.`
+                        : `${domain} tidak diblokir oleh Caliph DNS.`;
+                } else {
+                    throw new Error('Tidak dapat menemukan informasi DNS untuk domain ini.');
+                }
+            } catch (err) {
+                error.classList.remove('d-none');
+                errorMessage.textContent = err.message || 'Terjadi kesalahan saat memeriksa domain. Silakan coba lagi.';
+            } finally {
+                checkButton.disabled = false;
+                checkButton.innerHTML = '<i class="bi bi-search me-2"></i>Periksa';
+            }
+        });
+</script>
+
+
+</body></html>
