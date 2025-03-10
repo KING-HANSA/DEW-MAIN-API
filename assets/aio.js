@@ -31,7 +31,7 @@ document.getElementById('downloadButton').addEventListener('click', async () => 
 
         // Fetch video details from API
         const response = await fetch(
-            `https://api.paxsenix.biz.id/dl/aio?url=${encodeURIComponent(videoUrl)}`
+            `https://apis.davidcyriltech.my.id/download/aio?url=${encodeURIComponent(videoUrl)}`
         );
         const data = await response.json();
 
