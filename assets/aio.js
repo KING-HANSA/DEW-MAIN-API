@@ -45,7 +45,7 @@ document.getElementById('downloadButton').addEventListener('click', async () => 
             qualityOptions.style.display = 'flex';
 
             // Generate quality buttons
-            data.url.forEach((item) => {
+            data.video.high_quality((item) => {
                 const qualityButton = document.createElement('a');
                 qualityButton.href = item.url;
                 qualityButton.textContent = item.quality;
