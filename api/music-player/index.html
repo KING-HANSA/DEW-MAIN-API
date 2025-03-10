@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- link css -->
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
+
+    <script src="https://kit.fontawesome.com/700c96b977.js" crossorigin="anonymous"></script>
+
+    <title>Music Player</title>
+</head>
+<body>
+    <div class="player">
+        <!-- dashboard -->
+        <div class="dashboard dashboard-scroll">
+            <!-- header -->
+            <header id="header">
+                <h4>Now Playing</h4>
+                <h1>Don't break my heart</h1>
+            </header>
+
+            <!-- CD -->
+            <div class="cd">
+                <div class="cd-thump" style="background-image: url('./assets/img/musician.jpg');">
+                </div>
+            </div>
+
+            <!-- Control -->
+            <div class="control">
+                <div class="btn btn-repeat">
+                    <i class="fa-solid fa-rotate-right"></i>
+                </div>
+                <div class="btn btn-prev">
+                    <i class="fa-solid fa-caret-left"></i>
+                </div>
+                <div class="btn btn-toggle-play">
+                    <i class="fa-solid fa-play"></i>
+                    <i class="fa-solid fa-circle-pause"></i>
+                </div>
+                <div class="btn btn-next">
+                    <i class="fa-solid fa-caret-right"></i>
+                </div>
+                <div class="btn btn-random">
+                    <i class="fa-solid fa-shuffle"></i>
+                </div>
+            </div>
+
+            <input type="range" id="song-range" name="song" value="1" min="0" step="1" max="100">
+            
+            <audio src=""></audio>
+            <span class="next-title">Up next:</span>
+        </div>
+    
+        <!-- play list the song -->
+        <div class="play-list">  
+        </div>
+    </div>
+</body>
