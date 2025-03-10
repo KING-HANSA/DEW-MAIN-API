@@ -3,6 +3,7 @@ const modelEndpoints = {
     fluxPro: 'https://api.paxsenix.biz.id/ai-image/flux-pro?text=',
     sdxl: 'https://api.paxsenix.biz.id/ai-image/sdxl-beta?text=',
     dalle: 'https://api.paxsenix.biz.id/ai-image/dalle?text=',
+    magicstudio: 'https://api.paxsenix.biz.id/ai-image/magicstudio?text=',
     flux: 'https://api.paxsenix.biz.id/ai-image/flux?text='
 };
 
