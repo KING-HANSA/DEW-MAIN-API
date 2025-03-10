@@ -1,6 +1,6 @@
 // Define endpoints for each model
 const modelEndpoints = {
-    fluxPro: 'https://api.paxsenix.biz.id/ai-image/fluxSchnell2',
+    fluxPro: 'https://api.paxsenix.biz.id/ai-image/flux-pro?text',
     sdxl: 'https://api.paxsenix.biz.id/ai-image/sdxlImage',
     dalle: 'https://api.paxsenix.biz.id/ai-image/dalle',
     flux: 'https://api.paxsenix.biz.id/ai-image/fluxImage'
